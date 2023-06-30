@@ -1,0 +1,10 @@
+<launch>
+    <arg name="takeoff_height" default="5" />
+    <arg name="cruising_speed" default="2" />
+
+    <node pkg="guided_cpp" type="uav_control_node" name="uav_controller" output="screen"/>
+
+    <param name="/guided_cpp/takeoff_height" type="int" value="$(arg takeoff_height)" />
+    <param name="/guided_cpp/velocity/cruise" type="double" value="$(arg cruising_speed)" />
+
+</launch>
